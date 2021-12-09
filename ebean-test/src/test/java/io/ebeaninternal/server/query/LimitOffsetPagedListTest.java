@@ -29,17 +29,17 @@ public class LimitOffsetPagedListTest extends BaseTestCase {
 
   @Test
   public void getPageIndex_when_1_10() {
-    assertEquals(limit(1, 10).getPageIndex(), 1);
+    assertEquals(limit(1, 10).getPageIndex(), 0);
   }
 
   @Test
   public void getPageIndex_when_9_10() {
-    assertEquals(limit(1, 10).getPageIndex(), 1);
+    assertEquals(limit(9, 10).getPageIndex(), 0);
   }
 
   @Test
   public void getPageIndex_when_10_4() {
-    assertEquals(limit(10, 4).getPageIndex(), 3);
+    assertEquals(limit(10, 4).getPageIndex(), 2);
   }
 
   @Test
@@ -49,22 +49,22 @@ public class LimitOffsetPagedListTest extends BaseTestCase {
 
   @Test
   public void getPageIndex_when_10_9() {
-    assertEquals(limit(10, 9).getPageIndex(), 2);
+    assertEquals(limit(10, 9).getPageIndex(), 1);
   }
 
   @Test
   public void getPageIndex_when_10_11() {
-    assertEquals(limit(10, 11).getPageIndex(), 1);
+    assertEquals(limit(10, 11).getPageIndex(), 0);
   }
 
   @Test
   public void getPageIndex_when_21_10() {
-    assertEquals(limit(21, 10).getPageIndex(), 3);
+    assertEquals(limit(21, 10).getPageIndex(), 2);
   }
 
   @Test
   public void getPageIndex_when_29_10() {
-    assertEquals(limit(29, 10).getPageIndex(), 3);
+    assertEquals(limit(29, 10).getPageIndex(), 2);
   }
 
   @Test
@@ -74,7 +74,7 @@ public class LimitOffsetPagedListTest extends BaseTestCase {
 
   @Test
   public void getPageIndex_when_31_10() {
-    assertEquals(limit(31, 10).getPageIndex(), 4);
+    assertEquals(limit(31, 10).getPageIndex(), 3);
   }
 
   @Test
